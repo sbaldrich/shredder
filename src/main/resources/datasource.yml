@@ -1,0 +1,25 @@
+datasources:
+  - name: crateria
+    userName: crateria
+    password: crateria
+    host: localhost
+    port: 5433
+    dbName: shredder
+    driver: org.postgresql.ds.PGSimpleDataSource
+
+  - name: norfair
+    userName: norfair
+    password: norfair
+    host: localhost
+    port: 5434
+    dbName: shredder
+    driver: org.postgresql.ds.PGSimpleDataSource
+
+  - name: tourian
+    userName: tourian
+    password: tourian
+    host: localhost
+    port: 5435
+    dbName: shredder
+    driver: org.postgresql.ds.PGSimpleDataSource
+

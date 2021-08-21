@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  db01:
+    image: postgres:10-alpine
+    container_name: crateria
+    volumes:
+      - "./conf/setupdb.sh:/docker-entrypoint-initdb.d/setupdb.sh"
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_PASSWORD=crateria
+      - POSTGRES_USER=crateria
+      - POSTGRES_DB=shredder
+      - SCHEMA_BASE_ID=0
+  db02:
+    image: postgres:10-alpine
+    container_name: norfair
+    volumes:
+      - "./conf/setupdb.sh:/docker-entrypoint-initdb.d/setupdb.sh"
+    ports:
+      - 5434:5432
+    environment:
+      - POSTGRES_PASSWORD=norfair
+      - POSTGRES_USER=norfair
+      - POSTGRES_DB=shredder
+      - SCHEMA_BASE_ID=10
+  db03:
+    image: library/postgres:10-alpine
+    container_name: tourian
+    volumes:
+      - "./conf/setupdb.sh:/docker-entrypoint-initdb.d/setupdb.sh"
+    ports:
+      - 5435:5432
+    environment:
+      - POSTGRES_PASSWORD=tourian
+      - POSTGRES_USER=tourian
+      - POSTGRES_DB=shredder
+      - SCHEMA_BASE_ID=20
+
